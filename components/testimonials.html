@@ -9,7 +9,7 @@
 <!-- Testimonials Carousel -->
 <div class="relative max-w-6xl mx-auto">
     <!-- Carousel Container -->
-    <div class="overflow-hidden rounded-2xl bg-gray-50 p-8">
+    <div class="overflow-hidden rounded-2xl bg-gray-50 p-8 relative">
         <div class="flex transition-transform duration-500 ease-in-out" id="testimonialsSlider">
             <!-- Testimonial Card 1 -->
             <div class="min-w-full px-6">
@@ -114,11 +114,13 @@
             </div>
         </div>
         
-        <!-- Navigation Arrows -->
-        <div class="flex justify-between items-center mt-6">
+        <!-- Navigation Arrows - Positioned at sides -->
+        <div class="absolute top-1/2 left-4 transform -translate-y-1/2 z-10">
             <button onclick="previousTestimonial()" class="bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow">
                 <i class="fas fa-chevron-left text-gray-600"></i>
             </button>
+        </div>
+        <div class="absolute top-1/2 right-4 transform -translate-y-1/2 z-10">
             <button onclick="nextTestimonial()" class="bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow">
                 <i class="fas fa-chevron-right text-gray-600"></i>
             </button>
