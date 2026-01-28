@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetPro - Your Pet's Health is Our Priority</title>
+    <meta name="description" content="PetPro - Professional pet care services. Your pet's health is our priority.">
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter">
+    
+    <!-- Include Header -->
+    <div id="header"></div>
+    
+    <!-- Main Content -->
+    <main class="pt-16">
+        
+        <!-- Include Sections -->
+        <div id="sections"></div>
+        
+        <!-- Include Services -->
+        <div id="services"></div>
+        
+        <!-- Include Testimonials -->
+        <div id="testimonials"></div>
+        
+        <!-- Include Feature -->
+        <div id="feature"></div>
+        
+        <!-- Include Contact -->
+        <div id="contact"></div>
+    </main>
+
+    <!-- Include Footer -->
+    <div id="footer"></div>
+
+    <!-- JavaScript -->
+    <script src="js/scripts.js"></script>
+    
+    <!-- Load Components -->
+    <script>
+        // Load HTML components
+        fetch('components/header.html')
+            .then(response => response.text())
+            .then(html => document.getElementById('header').innerHTML = html);
+            
+        fetch('components/sections.html')
+            .then(response => response.text())
+            .then(html => document.getElementById('sections').innerHTML = html);
+            
+        fetch('components/services.html')
+            .then(response => response.text())
+            .then(html => document.getElementById('services').innerHTML = html);
+            
+        fetch('components/testimonials.html')
+            .then(response => response.text())
+            .then(html => document.getElementById('testimonials').innerHTML = html);
+            
+        fetch('components/feature.html')
+            .then(response => response.text())
+            .then(html => document.getElementById('feature').innerHTML = html);
+            
+        fetch('components/contact.html')
+            .then(response => response.text())
+            .then(html => document.getElementById('contact').innerHTML = html);
+            
+        fetch('components/footer.html')
+            .then(response => response.text())
+            .then(html => document.getElementById('footer').innerHTML = html);
+    </script>
+</body>
+</html>
