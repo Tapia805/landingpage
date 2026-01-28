@@ -799,10 +799,10 @@
                         const successMessage = document.getElementById('successMessage');
                         
                         if (contactForm && successMessage) {
-                                contactForm.addEventListener('submit', function(e) {
-                                        e.preventDefault();
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
                                 
-                                        // Get form fields
+                                                // Get form fields
         const nameInput = contactForm.querySelector('input[type="text"]');
         const emailInput = contactForm.querySelector('input[type="email"]');
         const messageTextarea = contactForm.querySelector('textarea');
@@ -826,6 +826,7 @@
         else if (!messageTextarea.value.trim()) {
             alert(' Please enter your message');
             messageTextarea.focus();
+            isValid = false;
             isValid = false;
         }
         // Validate Email format
@@ -855,6 +856,8 @@
                     </script>
 </body>
 </html>
+
+
 
 
 
