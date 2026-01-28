@@ -779,7 +779,7 @@
                             const navLinks = document.querySelectorAll('a[href^="#"]');
                             navLinks.forEach(link => {
                                 link.addEventListener('click', function(e) {
-                                    e.preventDefault();
+                                            e.preventDefault();
                                     const targetId = this.getAttribute('href').substring(1);
                                     const targetElement = document.getElementById(targetId);
                                     
@@ -794,29 +794,70 @@
                             });
                         });
                         
-                        // Form submission
+                        // Form submission with validation
                         const contactForm = document.querySelector('form');
                         const successMessage = document.getElementById('successMessage');
                         
                         if (contactForm && successMessage) {
-                            contactForm.addEventListener('submit', function(e) {
-                                e.preventDefault();
+                                contactForm.addEventListener('submit', function(e) {
+                                        e.preventDefault();
                                 
-                                // Show success message
-                                successMessage.classList.remove('translate-x-full', 'opacity-0', 'invisible');
-                                successMessage.classList.add('translate-x-0', 'opacity-100', 'visible');
-                                
-                                // Reset form
-                                contactForm.reset();
-                                
-                                // Hide message after 3 seconds
-                                setTimeout(() => {
-                                    successMessage.classList.add('translate-x-full', 'opacity-0', 'invisible');
-                                    successMessage.classList.remove('visible');
-                                }, 3000);
-                            });
+                                        // Get form fields
+        const nameInput = contactForm.querySelector('input[type="text"]');
+        const emailInput = contactForm.querySelector('input[type="email"]');
+        const messageTextarea = contactForm.querySelector('textarea');
+        
+        // Validation
+        let isValid = true;
+        
+        // Validate Name
+        if (!nameInput.value.trim()) {
+            alert(' Please enter your name');
+            nameInput.focus();
+            isValid = false;
+        }
+        // Validate Email
+        else if (!emailInput.value.trim()) {
+            alert(' Please enter your email');
+            emailInput.focus();
+            isValid = false;
+        }
+        // Validate Message
+        else if (!messageTextarea.value.trim()) {
+            alert(' Please enter your message');
+            messageTextarea.focus();
+            isValid = false;
+        }
+        // Validate Email format
+        else if (!emailInput.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+            alert(' Please enter a valid email address');
+            emailInput.focus();
+            isValid = false;
+        }
+        
+        // If all validations pass
+        if (isValid) {
+            // Show success message
+            successMessage.classList.remove('translate-x-full', 'opacity-0', 'invisible');
+            successMessage.classList.add('translate-x-0', 'opacity-100', 'visible');
+            
+            // Reset form
+            contactForm.reset();
+            
+            // Hide message after 3 seconds
+            setTimeout(() => {
+                successMessage.classList.add('translate-x-full', 'opacity-0', 'invisible');
+                successMessage.classList.remove('visible');
+            }, 3000);
+        }
+    });
                         }
                     </script>
 </body>
 </html>
+
+
+
+
+
 
