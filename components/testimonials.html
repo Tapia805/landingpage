@@ -114,17 +114,13 @@
             </div>
         </div>
         
-        <!-- Navigation Arrows - Positioned at sides -->
-        <div class="absolute top-1/2 left-4 transform -translate-y-1/2 z-10">
-            <button onclick="previousTestimonial()" class="bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow">
-                <i class="fas fa-chevron-left text-gray-600"></i>
-            </button>
-        </div>
-        <div class="absolute top-1/2 right-4 transform -translate-y-1/2 z-10">
-            <button onclick="nextTestimonial()" class="bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow">
-                <i class="fas fa-chevron-right text-gray-600"></i>
-            </button>
-        </div>
+        <!-- Navigation Arrows - RESTORED TO ORIGINAL -->
+        <button class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-colors -ml-4" onclick="previousTestimonial()">
+            <i class="fas fa-chevron-left text-gray-600"></i>
+        </button>
+        <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-colors -mr-4" onclick="nextTestimonial()">
+            <i class="fas fa-chevron-right text-gray-600"></i>
+        </button>
         
         <!-- Navigation Dots -->
         <div class="flex justify-center mt-6 space-x-2">
@@ -168,7 +164,7 @@
         showTestimonial(currentTestimonial);
     }
     
-    // Auto-slide every 5 seconds
+    // Auto-slide every 5 seconds - RESTORED
     setInterval(nextTestimonial, 5000);
     
     // Initialize first testimonial

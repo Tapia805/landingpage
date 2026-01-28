@@ -6,7 +6,7 @@
         </div>
         
         <div class="max-w-2xl mx-auto">
-            <form id="contactForm" class="space-y-6">
+            <form class="space-y-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-gray-700 font-medium mb-2">Name</label>
@@ -41,8 +41,8 @@
 
 <!-- Contact JavaScript -->
 <script>
-    // Form submission
-    const contactForm = document.getElementById('contactForm');
+    // Form submission - RESTORED TO ORIGINAL
+    const contactForm = document.querySelector('form');
     const successMessage = document.getElementById('successMessage');
     
     if (contactForm && successMessage) {
